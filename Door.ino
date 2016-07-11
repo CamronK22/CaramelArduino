@@ -1,7 +1,6 @@
 // New commands go under loop()
 
 #include "SoftwareSerial.h"
-#include "Pitches.h"
 
 const int btPwrPin = 8;
 SoftwareSerial bt(2, 3); // TX/RX pins
