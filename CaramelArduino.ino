@@ -39,7 +39,7 @@ void openDoor() {
 	buzz(300);
 	
 	digitalWrite(doorForward, HIGH);
-	delay(3000);
+	delay(7000);
 	digitalWrite(doorForward, LOW);
 	
 	print("Door openend successfully!");
@@ -54,7 +54,7 @@ void closeDoor() {
 	buzz(100);
 	
 	digitalWrite(doorReverse, HIGH);
-	delay(3000);
+	delay(7000);
 	digitalWrite(doorReverse, LOW);
 	
 	print("Door closed successfully!");
@@ -63,10 +63,10 @@ void closeDoor() {
 void alert() {
 	print("Alerting...");
 	
-	buzz(NOTE_C6);
-	buzz(NOTE_C6);
-	buzz(NOTE_C6);
-	buzz(NOTE_C6);
+	buzz(222);
+	buzz(222);
+	buzz(222);
+	buzz(222);
 	
 	print("Successfully alerted.");
 }
