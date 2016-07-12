@@ -12,7 +12,7 @@ const int manualSwitchOpen = 9;
 const int manualSwitchClose = 10;
 
 bool opened;
- 
+
 void setup()  {
     opened = false;
   
@@ -153,12 +153,10 @@ void loop() {
 
     if (digitalRead(manualSwitchClose) == HIGH) {
         msg = "close";
-        print("SWITCH CLOSING");
     }
 
     if (digitalRead(manualSwitchOpen) == LOW) {
-        msg = "open";   
-        print("SWITCH OPENING");
+        msg = "open";
     }
     
     // Command filters here via else if's
