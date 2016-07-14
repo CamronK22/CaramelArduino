@@ -21,7 +21,9 @@ void setup()  {
   	
   	pinMode(btPwrPin, OUTPUT);
   	pinMode(btKeyPin, OUTPUT);
+  	//*???
   	digitalWrite(btPwrPin, HIGH);
+    //*/
   	pinMode(spkrPin, OUTPUT);
   	pinMode(doorForward, OUTPUT);
   	pinMode(doorReverse, OUTPUT);
@@ -54,7 +56,7 @@ void openDoor() {
 	  buzz(300);
 	
 	  digitalWrite(doorForward, HIGH);
-	  delay(5500);
+	  delay(5000);
 	  digitalWrite(doorForward, LOW);
 	
 	  print("Door openend successfully!");
@@ -77,7 +79,7 @@ void closeDoor() {
 	  buzz(100);
 	
 	  digitalWrite(doorReverse, HIGH);
-	  delay(5500);
+	  delay(5000);
 	  digitalWrite(doorReverse, LOW);
 	
 	  print("Door closed successfully!");
@@ -114,10 +116,12 @@ String getMessage() {
   	char a;
   
   	while (bt.available()) {
-    	a = bt.read();
-      	msg += String(a);
+        a = bt.read();
+      	    msg += String(a);
   	}
-  
+
+    msg.toLowerCase();
+      
   	return msg;
 }
 
