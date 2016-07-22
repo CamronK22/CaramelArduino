@@ -49,9 +49,7 @@ void openDoor() {
     }
   
 	  print("Opening door...");
-	
-	  buzz(165);
-	  buzz(165);
+
 	  buzz(165);
 	  buzz(300);
 	
@@ -73,8 +71,6 @@ void closeDoor() {
   
 	  print("Closing door...");
 	
-	  buzz(165);
-	  buzz(165);
 	  buzz(165);
 	  buzz(100);
 	
@@ -155,13 +151,15 @@ void loop() {
     if (Serial.available() && Serial.read() == '#')
     	command();
 
-    if (digitalRead(manualSwitchClose) == HIGH) {
+    if (digitalRead(manualSwitchClose) == LOW) {
+        //print("close lo");
         msg = "close";
-    }
+    } //else print("close hi");
 
     if (digitalRead(manualSwitchOpen) == LOW) {
+        print("open lo");
         msg = "open";
-    }
+    } else print("open hi");
     
     // Command filters here via else if's
     if (msg.startsWith("help")) 
